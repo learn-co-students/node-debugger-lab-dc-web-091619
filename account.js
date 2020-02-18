@@ -1,3 +1,16 @@
+var _user = { admin: false }
+// => using an underscore (_user) means that you cannot access these variables (and they can be used on functions as well) outside of the object
+user = { admin: false }
+
+console.log(_user, global._user, GLOBAL._user)
+// => { admin: false } undefined undefined
+
+console.log(user, global.user, GLOBAL.user)
+// => { admin: false } { admin: false } { admin: false }
+
+// here, we can see that using the underscore (_user) prevents the variable from being referenced in the global scope
+
+
 const account = function() {
   var output = {}
   var customerAccount = {
